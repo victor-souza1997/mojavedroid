@@ -17,12 +17,12 @@ else ifneq ($(filter $(TARGET_DEV_BOARD),vim3l),)
 AUDIO_DEFAULT_OUTPUT := hdmi
 endif
 
-$(call inherit-product, device/amlogic/yukawa/device-common.mk)
+$(call inherit-product, device/sidia/mojavedroid/device-common.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += ro.product.device=$(TARGET_DEV_BOARD)
 GPU_TYPE ?= dvalin_ion
 
-BOARD_KERNEL_DTB := device/amlogic/yukawa-kernel/$(TARGET_KERNEL_USE)
+BOARD_KERNEL_DTB := device/sidia/mojavedroid/yukawa-kernel/$(TARGET_KERNEL_USE)
 
 ifeq ($(TARGET_PREBUILT_DTB),)
 LOCAL_DTB := $(BOARD_KERNEL_DTB)
@@ -32,11 +32,11 @@ endif
 
 # Feature permissions
 PRODUCT_COPY_FILES += \
-    device/amlogic/yukawa/permissions/yukawa.xml:/system/etc/sysconfig/yukawa.xml
+    device/sidia/mojavedroid/permissions/yukawa.xml:/system/etc/sysconfig/yukawa.xml
 
 # Speaker EQ
 PRODUCT_COPY_FILES += \
-    device/amlogic/yukawa/hal/audio/speaker_eq_sei610.fir:$(TARGET_COPY_OUT_VENDOR)/etc/speaker_eq_sei610.fir
+    device/sidia/mojavedroid/hal/audio/speaker_eq_sei610.fir:$(TARGET_COPY_OUT_VENDOR)/etc/speaker_eq_sei610.fir
 
 # Hotword Mic Toggle Provider
 ifneq ($(filter $(TARGET_DEV_BOARD),sei610),)
