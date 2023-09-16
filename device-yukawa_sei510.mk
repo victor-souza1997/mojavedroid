@@ -2,13 +2,13 @@ ifndef TARGET_KERNEL_USE
 TARGET_KERNEL_USE=5.10
 endif
 
-$(call inherit-product, device/amlogic/yukawa/device-common.mk)
+$(call inherit-product, device/sidia/mojavedroid/device-common.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += ro.product.device=sei510
 
 GPU_TYPE ?= dvalin_ion
 
-BOARD_KERNEL_DTB := device/amlogic/yukawa-kernel/$(TARGET_KERNEL_USE)
+BOARD_KERNEL_DTB := device/sidia/mojavedroid/yukawa-kernel/$(TARGET_KERNEL_USE)
 
 ifeq ($(TARGET_PREBUILT_DTB),)
 LOCAL_DTB := $(BOARD_KERNEL_DTB)
@@ -18,4 +18,4 @@ endif
 
 # Feature permissions
 PRODUCT_COPY_FILES += \
-    device/amlogic/yukawa/permissions/yukawa.xml:/system/etc/sysconfig/yukawa.xml
+    device/sidia/mojavedroid/permissions/yukawa.xml:/system/etc/sysconfig/yukawa.xml
