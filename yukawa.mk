@@ -1,7 +1,7 @@
 # Inherit the full_base and device configurations
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, device/amlogic/yukawa/device-yukawa.mk)
-$(call inherit-product, device/amlogic/yukawa/yukawa-common.mk)
+$(call inherit-product, device/sidia/mojavedroid/device-yukawa.mk)
+$(call inherit-product, device/sidia/mojavedroid/yukawa-common.mk)
 
 PRODUCT_NAME := yukawa
 PRODUCT_DEVICE := yukawa
@@ -10,7 +10,7 @@ ifndef TARGET_KERNEL_USE
 TARGET_KERNEL_USE := 5.10
 endif
 
-MOD_DIR := device/amlogic/yukawa-kernel/$(TARGET_KERNEL_USE)
+MOD_DIR := device/sidia/mojavedroid/yukawa-kernel/$(TARGET_KERNEL_USE)
 
 #
 # Put all the modules in the rootfs...
