@@ -1,4 +1,4 @@
-include device/amlogic/yukawa/yukawa/BoardConfig.mk
+include device/sidia/mojavedroid/yukawa/BoardConfig.mk
 
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
