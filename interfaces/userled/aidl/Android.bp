@@ -1,0 +1,21 @@
+aidl_interface {
+  name: "mojavedroid.hal.userled",
+  vendor: true,
+  srcs: ["mojavedroid/hal/userled/*.aidl"],
+  stability: "vintf",
+  owner: "victor-souza1997",
+  backend: {
+    cpp: {
+      enabled: false, //enabled by default
+    },
+    java: {
+      sdk_version: "module_current",
+    },
+    ndk: {
+      //ndk_platform is generated too, but it will deprecated on Android 13.
+      //just ndk will be available.
+      enabled: true, //enabled by default, just exposing
+    }
+  },
+}
+
