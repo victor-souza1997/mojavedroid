@@ -43,3 +43,8 @@ ifneq ($(filter $(TARGET_DEV_BOARD),sei610),)
 PRODUCT_PACKAGES += \
     YukawaHotwordMicToggleProvider
 endif
+
+# Add HAL
+
+PRODUCT_PACKAGE += \
+		   mojavedroid.hal.userled
