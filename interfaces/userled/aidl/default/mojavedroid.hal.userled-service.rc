@@ -1,0 +1,10 @@
+service mojavedroid.hal.userled-service /vendor/bin/hw/mojavedroid.hal.userled-service
+    interface aidl mojavedroid.hal.userled-service.IUserLed/default
+    class hal
+    user system
+    group system
+
+on boot
+    chown system system /sys/devices/platform/leds/leds/vim3:red/trigger
+    chmod 0660 /sys/devices/platform/leds/leds/vim3:red/trigger
+
