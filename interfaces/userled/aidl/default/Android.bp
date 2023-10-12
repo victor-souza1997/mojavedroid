@@ -23,7 +23,7 @@ cc_binary {
     "libbinder",
     "libutils",
     //ndk_platform will be deprecated on Android 13. 
-    "mojavedroid.hal.userled-V1-ndk_platform",
+    "mojavedroid.hal.userled-V1-ndk",
   ],
 }
 
