@@ -32,7 +32,7 @@ $(eval $(call declare-1p-copy-files,device/sidia/mojavedroid/input,))
 $(eval $(call declare-1p-copy-files,device/sidia/mojavedroid/media_xml,))
 $(eval $(call declare-1p-copy-files,device/sidia/mojavedroid/wifi,))
 $(eval $(call declare-1p-copy-files,device/sidia/mojavedroid/,.rc))
-$(eval $(call declare-1p-copy-files,device/sidia/mojavedroid/,fstab.yukawa))
+$(eval $(call declare-1p-copy-files,device/sidia/mojavedroid/fstab/,fstab.yukawa))
 
 # if some modules are built directly from this directory (not subdirectories),
 # their rules should be written here.
