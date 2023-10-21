@@ -89,9 +89,9 @@ BOARD_SUPER_PARTITION_METADATA_DEVICE := super
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 ifeq ($(TARGET_AVB_ENABLE), true)
 ifeq ($(TARGET_USE_AB_SLOT), true)
-TARGET_RECOVERY_FSTAB := device/sidia/mojavedroid/fstab.yukawa.avb.ab
+TARGET_RECOVERY_FSTAB := device/sidia/mojavedroid/fstab/fstab.yukawa.avb.ab
 else
-TARGET_RECOVERY_FSTAB := device/sidia/mojavedroid/fstab.recovery.yukawa.avb
+TARGET_RECOVERY_FSTAB := device/sidia/mojavedroid/fstab/fstab.recovery.yukawa.avb
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
 endif
 BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
@@ -100,9 +100,9 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 2
 else
 ifeq ($(TARGET_USE_AB_SLOT), true)
-TARGET_RECOVERY_FSTAB := device/sidia/mojavedroid/fstab.yukawa
+TARGET_RECOVERY_FSTAB := device/sidia/mojavedroid/fstab/fstab.yukawa
 else
-TARGET_RECOVERY_FSTAB := device/sidia/mojavedroid/fstab.recovery.yukawa
+TARGET_RECOVERY_FSTAB := device/sidia/mojavedroid/fstab/fstab.recovery.yukawa
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
 endif
 endif
