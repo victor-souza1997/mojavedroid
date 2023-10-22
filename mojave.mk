@@ -96,3 +96,7 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD += $(UART_MOD)
 endif
 
 endif
+
+# ================= BootAnimation =================
+PRODUCT_COPY_FILES += \
+    device/sidia/mojavedroid/misc/bootanimation.zip:system/media/bootanimation.zip
