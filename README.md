@@ -8,7 +8,7 @@ In order to make our board ready to receive our product, one must follow the fol
 ## Checklist
 
 - [x] 2 soft modifications: wallpaper, bootanimation, change of product name, change of folders from original yukawa. 
-- [] 1 medium
-- [] 1 hard
+- [ ] 1 medium
+- [ ] 1 hard
 
 
