@@ -7,7 +7,7 @@ PRODUCT_NAME := mojave
 PRODUCT_DEVICE := mojave
 
 ifndef TARGET_KERNEL_USE
-TARGET_KERNEL_USE := 5.10
+TARGET_KERNEL_USE := test#5.10
 endif
 
 MOD_DIR := device/sidia/mojavedroid/yukawa-kernel/$(TARGET_KERNEL_USE)

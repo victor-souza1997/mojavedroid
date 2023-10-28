@@ -1,5 +1,5 @@
 ifndef TARGET_KERNEL_USE
-TARGET_KERNEL_USE := 5.10
+TARGET_KERNEL_USE := test#5.10
 endif
 
 ifeq ($(TARGET_VIM3), true)
@@ -7,7 +7,7 @@ TARGET_DEV_BOARD := vim3
 else ifeq ($(TARGET_VIM3L), true)
 TARGET_DEV_BOARD := vim3l
 else ifeq ($(TARGET_DEV_BOARD),)
-TARGET_DEV_BOARD := sei610
+TARGET_DEV_BOARD := vim3l
 endif
 
 ifneq ($(filter $(TARGET_DEV_BOARD),vim3),)
@@ -43,9 +43,3 @@ ifneq ($(filter $(TARGET_DEV_BOARD),sei610),)
 PRODUCT_PACKAGES += \
     YukawaHotwordMicToggleProvider
 endif
-
-# Add HAL
-
-PRODUCT_PACKAGE += \
-		   mojavedroid.hal.userled \
-		   mojavedroid.hal.userled-service
