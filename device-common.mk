@@ -383,3 +383,9 @@ PRODUCT_COPY_FILES += \
 
 # Include Virtualization APEX
 $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk)
+
+# Add userled HAL
+#PRODUCT_PACKAGE += \
+		   mojavedroid.hal.userled \
+		   mojavedroid.hal.userled-service \
+           LedTest

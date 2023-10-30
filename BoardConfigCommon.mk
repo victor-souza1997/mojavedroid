@@ -92,7 +92,7 @@ ifeq ($(TARGET_USE_AB_SLOT), true)
 TARGET_RECOVERY_FSTAB := device/sidia/mojavedroid/fstab/fstab.yukawa.avb.ab
 else
 TARGET_RECOVERY_FSTAB := device/sidia/mojavedroid/fstab/fstab.recovery.yukawa.avb
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 34668544
 endif
 BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
 BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA2048
@@ -103,7 +103,7 @@ ifeq ($(TARGET_USE_AB_SLOT), true)
 TARGET_RECOVERY_FSTAB := device/sidia/mojavedroid/fstab/fstab.yukawa
 else
 TARGET_RECOVERY_FSTAB := device/sidia/mojavedroid/fstab/fstab.recovery.yukawa
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 34668544
 endif
 endif
 

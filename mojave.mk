@@ -6,9 +6,9 @@ $(call inherit-product, device/sidia/mojavedroid/mojave-common.mk)
 PRODUCT_NAME := mojave
 PRODUCT_DEVICE := mojave
 
-ifndef TARGET_KERNEL_USE
-TARGET_KERNEL_USE := test#5.10
-endif
+#ifndef TARGET_KERNEL_USE
+#TARGET_KERNEL_USE := #test
+#endif
 
 MOD_DIR := device/sidia/mojavedroid/yukawa-kernel/$(TARGET_KERNEL_USE)
 
