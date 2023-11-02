@@ -1,5 +1,5 @@
 // This library is available on:
-// out/soong/.intermediates/device/casa/placamae/interfaces/userled/aidl/
+// out/soong/.intermediates/device/casa/mojavedroid/interfaces/userled/aidl/
 // inside: 
 // mojavedroid.hal.userled-V1-ndk_platform-source/gen/include/aidl/mojavedroid/hal/userled
 #include <aidl/mojavedroid/hal/userled/BnUserLed.h>
