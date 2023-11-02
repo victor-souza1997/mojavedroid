@@ -232,7 +232,7 @@ PRODUCT_PACKAGES += \
 
 # Hardware Composer HAL
 #
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     hwcomposer.drm_meson \
     android.hardware.drm-service.widevine \
     android.hardware.drm-service.clearkey

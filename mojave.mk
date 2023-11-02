@@ -100,3 +100,9 @@ endif
 # ================= BootAnimation =================
 PRODUCT_COPY_FILES += \
     device/sidia/mojavedroid/misc/bootanimation.zip:system/media/bootanimation.zip
+
+
+PRODUCT_PACKAGE += \
+		  mojavedroid.hal.userled \
+		  mojavedroid.hal.userled-service \
+      LedTest \

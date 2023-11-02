@@ -162,7 +162,7 @@ DEVICE_MANIFEST_FILE += device/sidia/mojavedroid/manifest.xml
 ifneq ($(TARGET_KERNEL_USE), 4.19)
 DEVICE_MANIFEST_FILE += device/sidia/mojavedroid/manifest_kernel5.xml
 endif
-DEVICE_MATRIX_FILE := device/sidia/mojavedroid/compatibility_matrix.xml
+#DEVICE_MATRIX_FILE := device/sidia/mojavedroid/compatibility_matrix.xml
 
 ifneq ($(TARGET_SENSOR_MEZZANINE),)
 DEVICE_MANIFEST_FILE += device/sidia/mojavedroid/sensorhal/manifest.xml
@@ -170,3 +170,5 @@ endif
 
 # Generate an APEX image for experiment b/119800099.
 DEXPREOPT_GENERATE_APEX_IMAGE := true
+
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += device/sidia/mojavedroid/compatibility_matrix2.xml
