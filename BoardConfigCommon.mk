@@ -89,10 +89,10 @@ BOARD_SUPER_PARTITION_METADATA_DEVICE := super
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 ifeq ($(TARGET_AVB_ENABLE), true)
 ifeq ($(TARGET_USE_AB_SLOT), true)
-TARGET_RECOVERY_FSTAB := device/amlogic/yukawa/fstab.yukawa.avb.ab
+TARGET_RECOVERY_FSTAB := device/sidia/mojavedroid/fstab/fstab.yukawa.avb.ab
 else
-TARGET_RECOVERY_FSTAB := device/amlogic/yukawa/fstab.recovery.yukawa.avb
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
+TARGET_RECOVERY_FSTAB := device/sidia/mojavedroid/fstab/fstab.recovery.yukawa.avb
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 34670592
 endif
 BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
 BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA2048
@@ -100,10 +100,10 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 2
 else
 ifeq ($(TARGET_USE_AB_SLOT), true)
-TARGET_RECOVERY_FSTAB := device/amlogic/yukawa/fstab.yukawa
+TARGET_RECOVERY_FSTAB := device/sidia/mojavedroid/fstab/fstab.yukawa
 else
-TARGET_RECOVERY_FSTAB := device/amlogic/yukawa/fstab.recovery.yukawa
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
+TARGET_RECOVERY_FSTAB := device/sidia/mojavedroid/fstab/fstab.recovery.yukawa
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 34670592
 endif
 endif
 
@@ -152,21 +152,23 @@ BOARD_USES_GENERIC_AUDIO := false
 BOARD_USES_ALSA_AUDIO := true
 TARGET_USES_MKE2FS := true
 TARGET_USES_HWC2 := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/amlogic/yukawa/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sidia/mojavedroid/bluetooth
 
 BOARD_SEPOLICY_DIRS += \
-        device/amlogic/yukawa/sepolicy
+        device/sidia/mojavedroid/sepolicy
 
-DEVICE_MANIFEST_FILE += device/amlogic/yukawa/manifest.xml
+DEVICE_MANIFEST_FILE += device/sidia/mojavedroid/manifest.xml
 
 ifneq ($(TARGET_KERNEL_USE), 4.19)
-DEVICE_MANIFEST_FILE += device/amlogic/yukawa/manifest_kernel5.xml
+DEVICE_MANIFEST_FILE += device/sidia/mojavedroid/manifest_kernel5.xml
 endif
-DEVICE_MATRIX_FILE := device/amlogic/yukawa/compatibility_matrix.xml
+#DEVICE_MATRIX_FILE := device/sidia/mojavedroid/compatibility_matrix.xml
 
 ifneq ($(TARGET_SENSOR_MEZZANINE),)
-DEVICE_MANIFEST_FILE += device/amlogic/yukawa/sensorhal/manifest.xml
+DEVICE_MANIFEST_FILE += device/sidia/mojavedroid/sensorhal/manifest.xml
 endif
 
 # Generate an APEX image for experiment b/119800099.
 DEXPREOPT_GENERATE_APEX_IMAGE := true
+
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += device/sidia/mojavedroid/compatibility_matrix2.xml

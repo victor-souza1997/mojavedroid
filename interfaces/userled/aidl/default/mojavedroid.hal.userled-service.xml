@@ -1,0 +1,8 @@
+<manifest version="1.0" type="device">
+    <hal format="aidl">
+        <name>mojavedroid.hal.userled</name>
+        <version>1</version>
+        <fqname>IUserLed/default</fqname>
+    </hal>
+</manifest>
+
