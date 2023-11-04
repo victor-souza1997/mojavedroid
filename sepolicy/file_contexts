@@ -38,4 +38,3 @@
 # Led hal permission
 
 /vendor/bin/hw/mojavedroid\.hal\.userled-service         u:object_r:hal_userled_default_exec:s0
-

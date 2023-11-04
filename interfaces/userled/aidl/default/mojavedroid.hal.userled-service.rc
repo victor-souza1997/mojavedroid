@@ -5,6 +5,5 @@ service mojavedroid.hal.userled-service /vendor/bin/hw/mojavedroid.hal.userled-s
     group system
 
 on boot
-    chown system system /sys/devices/platform/leds/leds/vim3:red/trigger
-    chmod 0660 /sys/devices/platform/leds/leds/vim3:red/trigger
-
+    chown system system /sys/devices/platform/leds/leds/red:status/trigger
+    chmod 0660 /sys/devices/platform/leds/leds/red:status/trigger

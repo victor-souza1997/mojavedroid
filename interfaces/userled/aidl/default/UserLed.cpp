@@ -29,6 +29,7 @@ namespace aidl::mojavedroid::hal::userled {
   ndk::ScopedAStatus UserLed::setMode(const std::string &in_mode, bool *_aidl_return) {
     LOG(INFO) << "UserLed -> setMode data=(" << in_mode.c_str() << ")";
     *_aidl_return = this->writeValue(RED_LED, in_mode.c_str()) == 0;
+
     return ndk::ScopedAStatus::ok();
   }
 }

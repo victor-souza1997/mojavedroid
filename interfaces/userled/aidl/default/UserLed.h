@@ -7,7 +7,7 @@
 namespace aidl::mojavedroid::hal::userled {
   class UserLed : public BnUserLed {
     public:
-      static inline const char RED_LED[] = "/sys/devices/platform/leds/leds/vim3:red/trigger";
+      static inline const char RED_LED[] = "/sys/devices/platform/leds/leds/red:status/trigger";
 
     public:
       ndk::ScopedAStatus setMode(const std::string &in_mode, bool *_aidl_return) override;
