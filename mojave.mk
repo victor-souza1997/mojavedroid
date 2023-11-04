@@ -6,9 +6,9 @@ $(call inherit-product, device/sidia/mojavedroid/mojave-common.mk)
 PRODUCT_NAME := mojave
 PRODUCT_DEVICE := mojave
 
-ifndef TARGET_KERNEL_USE
-TARGET_KERNEL_USE := 5.10
-endif
+#ifndef TARGET_KERNEL_USE
+#TARGET_KERNEL_USE := #test
+#endif
 
 MOD_DIR := device/sidia/mojavedroid/yukawa-kernel/$(TARGET_KERNEL_USE)
 
@@ -96,3 +96,13 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD += $(UART_MOD)
 endif
 
 endif
+
+# ================= BootAnimation =================
+PRODUCT_COPY_FILES += \
+    device/sidia/mojavedroid/misc/bootanimation.zip:system/media/bootanimation.zip
+
+
+PRODUCT_PACKAGE += \
+		  mojavedroid.hal.userled \
+		  mojavedroid.hal.userled-service \
+      LedTest \

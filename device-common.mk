@@ -93,29 +93,29 @@ PRODUCT_PACKAGES += \
 ifeq ($(TARGET_USE_AB_SLOT), true)
 ifeq ($(TARGET_AVB_ENABLE), true)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.yukawa.avb.ab:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.yukawa \
-    $(LOCAL_PATH)/fstab.yukawa.avb.ab:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.yukawa
+    $(LOCAL_PATH)/fstab/fstab.yukawa.avb.ab:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.yukawa \
+    $(LOCAL_PATH)/fstab/fstab.yukawa.avb.ab:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.yukawa
 else
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.yukawa.ab:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.yukawa \
-    $(LOCAL_PATH)/fstab.yukawa.ab:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.yukawa
+    $(LOCAL_PATH)/fstab/fstab.yukawa.ab:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.yukawa \
+    $(LOCAL_PATH)/fstab/fstab.yukawa.ab:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.yukawa
 endif
 else
 ifeq ($(TARGET_AVB_ENABLE), true)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.ramdisk.common.avb:$(TARGET_COPY_OUT_RAMDISK)/fstab.yukawa \
-    $(LOCAL_PATH)/fstab.yukawa:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.yukawa
+    $(LOCAL_PATH)/fstab/fstab.ramdisk.common.avb:$(TARGET_COPY_OUT_RAMDISK)/fstab.yukawa \
+    $(LOCAL_PATH)/fstab/fstab.yukawa:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.yukawa
 else
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.ramdisk.common:$(TARGET_COPY_OUT_RAMDISK)/fstab.yukawa \
-    $(LOCAL_PATH)/fstab.yukawa:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.yukawa
+    $(LOCAL_PATH)/fstab/fstab.ramdisk.common:$(TARGET_COPY_OUT_RAMDISK)/fstab.yukawa \
+    $(LOCAL_PATH)/fstab/fstab.yukawa:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.yukawa
 endif
 endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.yukawa.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.yukawa.rc \
-    $(LOCAL_PATH)/init.yukawa.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.yukawa.usb.rc \
-    $(LOCAL_PATH)/init.recovery.hardware.rc:recovery/root/init.recovery.yukawa.rc \
+    $(LOCAL_PATH)/init/init.yukawa.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.yukawa.rc \
+    $(LOCAL_PATH)/init/init.yukawa.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.yukawa.usb.rc \
+    $(LOCAL_PATH)/init/init.recovery.hardware.rc:recovery/root/init.recovery.yukawa.rc \
     $(LOCAL_PATH)/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
     $(LOCAL_PATH)/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
@@ -286,7 +286,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += stm32_flash nanoapp_cmd nanotool
 
 PRODUCT_COPY_FILES += \
-    device/sidia/mojavedroid/init.common.nanohub.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.nanohub.rc
+    device/sidia/mojavedroid/init/init.common.nanohub.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.nanohub.rc
 
 # Copy sensors config file(s)
 PRODUCT_COPY_FILES += \
@@ -383,3 +383,9 @@ PRODUCT_COPY_FILES += \
 
 # Include Virtualization APEX
 $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk)
+
+# Add userled HAL
+#PRODUCT_PACKAGE += \
+		   mojavedroid.hal.userled \
+		   mojavedroid.hal.userled-service \
+           LedTest
