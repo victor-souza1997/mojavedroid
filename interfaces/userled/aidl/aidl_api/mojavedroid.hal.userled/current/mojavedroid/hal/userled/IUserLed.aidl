@@ -19,5 +19,5 @@
 package mojavedroid.hal.userled;
 @VintfStability
 interface IUserLed {
-  boolean setMode(in String mode);
+  String setMode(in String mode);
 }

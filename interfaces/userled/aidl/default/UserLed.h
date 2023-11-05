@@ -7,11 +7,12 @@
 namespace aidl::mojavedroid::hal::userled {
   class UserLed : public BnUserLed {
     public:
-      static inline const char RED_LED[] = "/sys/devices/platform/leds/leds/red:status/trigger";
+      static inline const char RED_LED[] = "/sys/bus/iio/devices/iio:device0/in_humidityrelative_scale";
 
     public:
-      ndk::ScopedAStatus setMode(const std::string &in_mode, bool *_aidl_return) override;
-      static int writeValue(const char *file, const char *value);
+      ndk::ScopedAStatus setMode(const std::string &in_mode, std::string *_aidl_return) override;
+      
+      static std::string writeValue(const char *file);
   };
 }
 

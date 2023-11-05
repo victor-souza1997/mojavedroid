@@ -106,3 +106,6 @@ PRODUCT_PACKAGE += \
 		  mojavedroid.hal.userled \
 		  mojavedroid.hal.userled-service \
       LedTest \
+
+
+      

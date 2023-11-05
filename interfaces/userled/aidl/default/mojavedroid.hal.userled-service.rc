@@ -5,5 +5,5 @@ service mojavedroid.hal.userled-service /vendor/bin/hw/mojavedroid.hal.userled-s
     group system
 
 on boot
-    chown system system /sys/devices/platform/leds/leds/red:status/trigger
-    chmod 0660 /sys/devices/platform/leds/leds/red:status/trigger
+    chown system system /sys/bus/iio/devices/iio:device0/in_humidityrelative_scale
+    chmod 0660 /sys/bus/iio/devices/iio:device0/in_humidityrelative_scale

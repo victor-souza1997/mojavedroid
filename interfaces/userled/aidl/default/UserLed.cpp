@@ -3,32 +3,35 @@
 #include <utils/Log.h>
 #include <android-base/logging.h>
 #include <sys/stat.h>
-
+#include <string>
+#include <sstream>
+#include <fstream>
 namespace aidl::mojavedroid::hal::userled {
 
-  int UserLed::writeValue(const char *file, const char *value) {
-
-    int fd;
-    int str_len = strlen(value) + 1;
-
-    fd = open(file, O_WRONLY);
-
-    if (fd < 0) {
-      return -1;
+  std::string UserLed::writeValue( const char *filename) {
+    LOG(INFO) << "readFile read " << filename;
+   
+    
+    FILE* file = std::fopen(filename, "r");
+    if (!file) {
+        return ""; // Return an empty string to indicate failure.
     }
 
-    if(!write(fd, value, str_len)){
-      close(fd);
-      return -1;
-    }  
+    std::string fileContent;
+    char buffer[1024]; // Adjust the buffer size as needed.
 
-    close(fd);
-    return 0;
-  }
+    while (std::fgets(buffer, sizeof(buffer), file) != NULL) {
+        fileContent += buffer;
+    }
 
-  ndk::ScopedAStatus UserLed::setMode(const std::string &in_mode, bool *_aidl_return) {
+    std::fclose(file);
+
+    return fileContent;
+}
+
+  ndk::ScopedAStatus UserLed::setMode(const std::string &in_mode, std::string *_aidl_return) {
     LOG(INFO) << "UserLed -> setMode data=(" << in_mode.c_str() << ")";
-    *_aidl_return = this->writeValue(RED_LED, in_mode.c_str()) == 0;
+    *_aidl_return = writeValue(RED_LED);//writeValue(RED_LED, in_mode.c_str());
 
     return ndk::ScopedAStatus::ok();
   }

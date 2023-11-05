@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 
+
 using ::aidl::mojavedroid::hal::userled::IUserLed;
 
 
@@ -11,7 +12,7 @@ int main(int argc, char *argv[]) {
 
     std::shared_ptr<IUserLed> mHal;
     std::string a;
-    bool c;
+    std::string c;
 
     if (argc != 2) {
         std::cout << "USAGE ./LedTest <none|heartbeat|default-on>\n";
